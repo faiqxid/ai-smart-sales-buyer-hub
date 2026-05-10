@@ -1,0 +1,29 @@
+# Local python environments
+.venv/
+venv/
+ENV/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Git and OS files
+.env
+.env.*
+.git/
+.gitignore
+.DS_Store
+
+# Docker/Compose files
+docker-compose.yml
+Dockerfile
+.dockerignore
+.gcloudignore
+README.md

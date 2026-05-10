@@ -1,0 +1,13 @@
+DATABASE_URL: "postgresql+psycopg://appuser:CHANGE_ME@/sales_hub?host=/cloudsql/PROJECT_ID:REGION:CLOUDSQL_INSTANCE"
+JWT_SECRET: "CHANGE_ME_MIN_32_CHARS"
+JWT_ALGORITHM: "HS256"
+JWT_EXPIRE_MINUTES: "10080"
+GEMINI_API_KEY: "CHANGE_ME"
+FIREBASE_PROJECT_ID: "CHANGE_ME"
+FIREBASE_CLIENT_EMAIL: "firebase-adminsdk-xxxxx@PROJECT_ID.iam.gserviceaccount.com"
+FIREBASE_PRIVATE_KEY: |
+  -----BEGIN PRIVATE KEY-----
+  CHANGE_ME
+  -----END PRIVATE KEY-----
+CORS_ORIGINS: "https://your-frontend.example.com"
+DEBUG: "false"

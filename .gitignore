@@ -4,8 +4,12 @@
 !.env.example
 backend/.env
 backend/.env.*
+backend/cloudrun-env.yaml
+backend/cloudrun-env.*.yaml
+!backend/cloudrun-env.example.yaml
 frontend/.env
 frontend/.env.*
+frontend/cloudbuild.yaml
 
 # Python
 __pycache__/

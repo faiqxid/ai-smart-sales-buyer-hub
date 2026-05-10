@@ -10,6 +10,7 @@ backend/cloudrun-env.*.yaml
 frontend/.env
 frontend/.env.*
 frontend/cloudbuild.yaml
+*.local.yaml
 
 # Python
 __pycache__/

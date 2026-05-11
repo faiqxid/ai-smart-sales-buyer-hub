@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getUser } from '@/lib/auth';
+import { getUser, logout } from '@/lib/auth';
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -36,7 +36,8 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <a href="/admin/users" className="block px-4 py-2 rounded-lg text-slate-700 hover:bg-slate-100 font-medium">User Management</a>
         </nav>
         <div className="p-4 border-t border-slate-200 text-sm text-slate-500">
-          <a href="/profile" className="hover:text-slate-800">← Kembali ke Profil</a>
+          <a href="/profile" className="block px-4 py-2 rounded-lg text-slate-700 hover:bg-slate-100 font-medium hover:text-slate-800">Profil</a>
+          <button onClick={() => { if (window.confirm('Keluar dari akun admin?')) logout(); }} className="w-full text-left mt-2 block px-4 py-2 rounded-lg text-red-600 hover:bg-red-50 font-medium">Logout</button>
         </div>
       </aside>
 
@@ -49,9 +50,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Mobile Nav (Simple Bottom Bar for MVP) */}
       <nav className="md:hidden fixed bottom-0 w-full bg-white border-t flex justify-around p-3 z-50">
-        <a href="/admin" className="text-sm font-medium">Dashboard</a>
-        <a href="/admin/integrations" className="text-sm font-medium">Setup</a>
-        <a href="/admin/users" className="text-sm font-medium">Users</a>
+        <a href="/admin" className="flex flex-col items-center gap-0.5 text-xs font-medium text-slate-700">
+          <span>🏠</span>Dashboard
+        </a>
+        <a href="/admin/integrations" className="flex flex-col items-center gap-0.5 text-xs font-medium text-slate-700">
+          <span>⚙️</span>Setup
+        </a>
+        <a href="/admin/users" className="flex flex-col items-center gap-0.5 text-xs font-medium text-slate-700">
+          <span>👥</span>Users
+        </a>
+        <button
+          onClick={() => { if (window.confirm('Keluar dari akun admin?')) logout(); }}
+          className="flex flex-col items-center gap-0.5 text-xs font-medium text-red-500"
+        >
+          <span>🚪</span>Logout
+        </button>
       </nav>
     </div>
   );
